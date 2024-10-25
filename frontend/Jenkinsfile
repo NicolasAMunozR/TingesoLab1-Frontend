@@ -20,7 +20,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    bat 'docker build -t t-toto104/frontend:latest .' // Construye la imagen Docker
+                    bat 'docker build -t ttoto104/frontend:latest .' // Construye la imagen Docker
                 }
             }
         }
@@ -29,9 +29,9 @@ pipeline {
             steps {
                 script {
                     withCredentials([string(credentialsId: 'T_Toto104', variable: 'dhpsw')]) {
-                        bat 'docker login -u t-toto104 -p %dhpsw%'
+                        bat 'docker login -u ttoto104 -p %dhpsw%'
                     }
-                    bat 'docker push t-toto104/frontend:latest'
+                    bat 'docker push ttoto104/frontend:latest'
                 }
             }
         }
