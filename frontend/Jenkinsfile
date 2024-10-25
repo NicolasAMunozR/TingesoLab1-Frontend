@@ -7,20 +7,26 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/NicolasAMunozR/TingesoLab1-Frontend']])
-                bat 'npm install' // Usa 'bat' para Windows o 'sh' para Linux/Mac
+                dir('frontend') { // Cambia al directorio 'frontend'
+                    bat 'npm install' // Usa 'bat' para Windows o 'sh' para Linux/Mac
+                }
             }
         }
 
         stage('Build Project') {
             steps {
-                bat 'npm run build' // Genera la versión de producción del frontend
+                dir('frontend') { // Cambia al directorio 'frontend'
+                    bat 'npm run build' // Genera la versión de producción del frontend
+                }
             }
         }
 
         stage('Build Docker Image') {
             steps {
                 script {
-                    bat 'docker build -t ttoto104/frontend:latest .' // Construye la imagen Docker
+                    dir('frontend') { // Cambia al directorio 'frontend'
+                        bat 'docker build -t ttoto104/frontend:latest .' // Construye la imagen Docker
+                    }
                 }
             }
         }
