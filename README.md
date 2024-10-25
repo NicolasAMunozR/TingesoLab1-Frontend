@@ -1,1 +1,0 @@
-# TingesoLab1-Frontend
