@@ -103,7 +103,7 @@ const SimulationCredit = () => {
             style={{ marginLeft: "0.5rem" }}
             startIcon={<SaveIcon />}
           >
-            Grabar
+            Grabar Datos Chile
           </Button>
         </FormControl>
 
