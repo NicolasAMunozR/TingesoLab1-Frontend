@@ -15,7 +15,7 @@ pipeline {
 
         stage('Build Project') {
             steps {
-                dir('frontend') { // Cambia al directorio 'frontend'
+                dir('frontend') { // Cambia al directorio 'frontend'//////
                     bat 'npm run build' // Genera la versión de producción del frontend
                 }
             }

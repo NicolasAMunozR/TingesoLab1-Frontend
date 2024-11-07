@@ -32,7 +32,7 @@ export default function Navbar() {
           </IconButton>
 
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          PrestaBanco: Sistema de Gestión de Préstamos Hipotecarios
+            PrestaBanco: Sistema de Gestión de Préstamos Hipotecarios.
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>
