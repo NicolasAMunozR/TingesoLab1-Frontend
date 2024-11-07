@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     dir('frontend') { // Cambia al directorio 'frontend'
-                        bat 'docker build -t ttoto104/frontend:latest .' // Construye la imagen Docker
+                        bat 'docker build --no-cache -t ttoto104/frontend:latest .' // Construye la imagen Docker
                     }
                 }
             }
